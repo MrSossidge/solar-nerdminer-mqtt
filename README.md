@@ -49,14 +49,14 @@ All configuration is at the top of `src/mqtt_manager.h`:
 
 ```cpp
 // MQTT broker
-#define MQTT_BROKER      "10.0.0.20"   // Your MQTT broker IP
+#define MQTT_BROKER      "YOUR_MQTT_BROKER_IP"   // e.g. "192.168.1.50"
 #define MQTT_PORT        1883
-#define MQTT_USER        ""            // Leave blank if anonymous
+#define MQTT_USER        ""                       // Leave blank if anonymous
 #define MQTT_PASS        ""
 
 // Your location (for sunrise/sunset calculation)
-#define LOCATION_LAT     "53.7183"     // North Ferriby, East Yorkshire
-#define LOCATION_LNG     "-0.4746"
+#define LOCATION_LAT     "YOUR_LATITUDE"          // e.g. "51.5074"
+#define LOCATION_LNG     "YOUR_LONGITUDE"         // e.g. "-0.1278"
 
 // Buffer added to civil twilight window
 #define TWILIGHT_BUFFER_SECS  1800     // 30 minutes either side
@@ -125,8 +125,8 @@ After first boot, go to:
 Change these two lines in `mqtt_manager.h`:
 
 ```cpp
-#define LOCATION_LAT     "53.7183"
-#define LOCATION_LNG     "-0.4746"
+#define LOCATION_LAT     "YOUR_LATITUDE"
+#define LOCATION_LNG     "YOUR_LONGITUDE"
 ```
 
 And update the timezone string in `mqttTimeInit()` if outside the UK.
