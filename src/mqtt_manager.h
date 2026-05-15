@@ -5,12 +5,12 @@
 // Handles:
 //   - MQTT connection and publishing to Home Assistant
 //   - Daily sunrise/sunset fetch from sunrise-sunset.org API
-//     for North Ferriby, East Yorkshire (53.7183, -0.4746)
+//     using your configured latitude and longitude
 //   - UK timezone: GMT (winter) and BST (summer) auto-detection
 //   - Mining window = civil twilight start/end ± 30 minutes
 //   - HA auto-discovery so sensors appear automatically
 //   - Deep sleep outside mining window to protect batteries
-// ═══════════════════════════════════════════════════════════════
+
 
 #include <Arduino.h>
 #include <WiFi.h>
@@ -19,7 +19,7 @@
 #include <ArduinoJson.h>
 
 // ── User configuration ────────────────────────────────────────
-#define MQTT_BROKER      "10.0.0.20"
+#define MQTT_BROKER      "YOUR_MQTT_BROKER_IP_OR_HOSTNAME"
 #define MQTT_PORT        1883
 #define MQTT_USER        ""
 #define MQTT_PASS        ""
@@ -28,8 +28,8 @@
 #define MQTT_DISCO_PFX   "homeassistant"
 
 // North Ferriby, East Yorkshire
-#define LOCATION_LAT     "53.7124"
-#define LOCATION_LNG     "-0.5158"
+#define LOCATION_LAT     "YOUR_LATITUDE"
+#define LOCATION_LNG     "YOUR_LONGITUDE"
 
 // Buffer added/subtracted from civil twilight times
 #define TWILIGHT_BUFFER_SECS  1800  // 30 minutes
@@ -58,7 +58,7 @@ int twilightEndSecs   = 86400;
 // Handles both GMT (winter) and BST (summer) automatically
 // Uses NerdMiner's stored timezone offset + DST detection
 // API ISO8601 format: "2026-05-14T04:16:55+00:00"
-// Location: North Ferriby, East Yorkshire (53.7183, -0.4746)
+// Location: configured via LOCATION_LAT and LOCATION_LNG
 int utcIsoToLocalSecsSinceMidnight(const char* isoStr) {
   int year, month, day, hh, mm, ss;
   sscanf(isoStr, "%d-%d-%dT%d:%d:%d", &year, &month, &day, &hh, &mm, &ss);
