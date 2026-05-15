@@ -19,7 +19,7 @@
 #include <ArduinoJson.h>
 
 // ── User configuration ────────────────────────────────────────
-#define MQTT_BROKER      "YOUR_MQTT_BROKER_IP_OR_HOSTNAME"
+#define MQTT_BROKER      "10.0.0.20"
 #define MQTT_PORT        1883
 #define MQTT_USER        ""
 #define MQTT_PASS        ""
@@ -27,9 +27,9 @@
 #define MQTT_BASE_TOPIC  "nerdminer/solar"
 #define MQTT_DISCO_PFX   "homeassistant"
 
-// Location for sunrise/sunset API (Find your latitude and longitude at https://www.latlong.net/)
-#define LOCATION_LAT     "YOUR_LATITUDE"
-#define LOCATION_LNG     "YOUR_LONGITUDE"
+// North Ferriby, East Yorkshire
+#define LOCATION_LAT     "53.7124"
+#define LOCATION_LNG     "-0.5158"
 
 // Buffer added/subtracted from civil twilight times
 #define TWILIGHT_BUFFER_SECS  1800  // 30 minutes
