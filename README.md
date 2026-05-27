@@ -145,3 +145,5 @@ Additional MQTT and scheduling code released under MIT licence.
 - [BitMaker](https://github.com/BitMaker-hub) — NerdMinerV2 project
 - [sunrise-sunset.org](https://sunrise-sunset.org/api) — Free sunrise/sunset API
 - [knolleary/PubSubClient](https://github.com/knolleary/pubsubclient) — MQTT library
+
+<a href="https://www.buymeacoffee.com/MrSossidge" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" style="height: 60px !important;width: 217px !important;" ></a>
